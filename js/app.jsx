@@ -95,9 +95,10 @@ var app = app || {};
 				}
 			}, this);
 
-			var todoItems = shownTodos.map(function (todo) {
+			var todoItems = shownTodos.map(function (todo, index) {
 				return (
 					<TodoItem
+						cy-data={`todo-item-${index}`}
 						key={todo.id}
 						todo={todo}
 						onToggle={this.toggle.bind(this, todo)}
